@@ -1,8 +1,18 @@
 
-Branch | Status
------- | -------
-Master | [![Build Status](https://dev.azure.com/xBIMTeam/xBIMToolkit/_apis/build/status/xBimTeam.XbimEssentials?branchName=master)](https://dev.azure.com/xBIMTeam/xBIMToolkit/_build/latest?definitionId=1&branchName=master)
-Develop | [![Build Status](https://dev.azure.com/xBIMTeam/xBIMToolkit/_apis/build/status/xBimTeam.XbimEssentials?branchName=develop)](https://dev.azure.com/xBIMTeam/xBIMToolkit/_build/latest?definitionId=1&branchName=develop)
+Branch | Build Status  | MyGet | NuGet
+------ | ------- | --- | --- |
+Master | [![Build Status](https://dev.azure.com/xBIMTeam/xBIMToolkit/_apis/build/status/xBimTeam.XbimEssentials?branchName=master)](https://dev.azure.com/xBIMTeam/xBIMToolkit/_build/latest?definitionId=1&branchName=master) | ![master](https://img.shields.io/myget/xbim-master/v/Xbim.Essentials.svg) | ![](https://img.shields.io/nuget/v/Xbim.Essentials.svg)
+Develop | [![Build Status](https://dev.azure.com/xBIMTeam/xBIMToolkit/_apis/build/status/xBimTeam.XbimEssentials?branchName=develop)](https://dev.azure.com/xBIMTeam/xBIMToolkit/_build/latest?definitionId=1&branchName=develop) | ![](https://img.shields.io/myget/xbim-develop/vpre/Xbim.Essentials.svg) | -
+
+
+
+|Toolkit Component| Latest Myget | Latest Nuget |
+| ----| ---- | ----|
+|Essentials| ![master](https://img.shields.io/myget/xbim-master/v/Xbim.Essentials.svg) | ![](https://img.shields.io/nuget/v/Xbim.Essentials.svg)
+|Geometry| ![master](https://img.shields.io/myget/xbim-master/v/Xbim.Geometry.svg) | ![](https://img.shields.io/nuget/v/Xbim.Geometry.svg)
+|CobieExpress| ![master](https://img.shields.io/myget/xbim-master/v/Xbim.IO.CobieExpress.svg) | ![](https://img.shields.io/nuget/v/Xbim.IO.CobieExpress.svg)
+|Windows UI| ![master](https://img.shields.io/myget/xbim-master/v/Xbim.WindowsUI.svg) | ![](https://img.shields.io/nuget/v/Xbim.WindowsUI.svg)
+|Exchange| ![master](https://img.shields.io/myget/xbim-master/v/Xbim.Exchange.svg) | ![](https://img.shields.io/nuget/v/Xbim.Exchange.svg)
 
 # XbimEssentials
 **XbimEssentials** is the foundational components of [Xbim](https://xbimteam.github.io/), the e**X**tensible 
@@ -11,6 +21,15 @@ the .NET platform. This library enables software developers to easily read, writ
 the buildingSmart [IFC formats](https://en.wikipedia.org/wiki/Industry_Foundation_Classes), using any .NET language. 
 
 As of version 5.0 XbimEssentials includes elementary support for .NET Core 2.0 in addition .NET Framework.
+
+## Updating from prior versions
+
+Please see our [ChangeLog](CHANGELOG.md) for details on what's new and what you need to upgrade. 
+In particular, please **note the following section copied here:**
+
+> **BREAKING CHANGE**: Windows forms and Console apps using *IfcStore* must now call `IfcStore.ModelProviderFactory.UseHeuristicModelProvider();` at application startup
+>
+> [failure to do so] will likely result in use of the very basic `MemoryModel` implementation which does not support *.xbim* files
 
 ## Background / Motivation ##
 
